@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="@color/colorAccent"
+    android:background="@color/white"
     android:gravity="bottom"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -15,6 +15,18 @@
         android:src="@drawable/profile"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prabhakar"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:textColor="#01579B"
+        android:paddingStart="18dp"
+        android:paddingLeft="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        />
 
 
 </LinearLayout>
