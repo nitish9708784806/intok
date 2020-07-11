@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/profile"
+            android:title="Dashboard" />
+        <item
+
+            android:id="@+id/admin"
+            android:icon="@drawable/ic_perm_identity_black_24dp"
+            android:title="Admins" />
+
+        <item
+            android:id="@+id/b_images"
+            android:icon="@drawable/camera"
+            android:title="Banner Images" />
+
+        <item
+
+            android:id="@+id/g_images"
+            android:icon="@drawable/ic_image_black_24dp"
+            android:title="Gallery images" />
+
+        <item
+
+            android:id="@+id/resume"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Resume" />
+
+        <item
+
+            android:id="@+id/messages"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Messages" />
+
+        <item
+
+            android:id="@+id/addmi"
+            android:icon="@drawable/ic_perm_identity_black_24dp"
+            android:title="Admission enquiries" />
+
+        <item
+
+            android:id="@+id/notic"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Notice" />
+
+        <item
+
+            android:id="@+id/sub"
+            android:icon="@drawable/subscriptions"
+            android:title="Subscription" />
+
+
+    </group>
+
+</menu>
