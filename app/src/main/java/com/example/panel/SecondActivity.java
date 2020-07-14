@@ -33,7 +33,7 @@ import static com.example.panel.R.string.*;
 
 public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final int SELECT_IMAGE
+    private static final int SELECT_IMAGE = 0;
     private DrawerLayout drawer;
     private int requestCode;
     private int resultCode;
@@ -62,17 +62,33 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         toggle.syncState();
     }
 
-// TO OPEN GALLERY
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+
+//TO OPEN CAMERA
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SELECT_IMAGE) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
         this.requestCode = requestCode;
         this.resultCode = resultCode;
         this.data = data;
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch(requestCode) {
+        switch (requestCode) {
             case 1234:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
@@ -91,26 +107,8 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         }
 
     }
-
-//TO OPEN CAMERA
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SELECT_IMAGE) {
-            if (resultCode == Activity.RESULT_OK) {
-                if (data != null) {
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
     private Context getActivity() {
+        return null;
     }
 
 
