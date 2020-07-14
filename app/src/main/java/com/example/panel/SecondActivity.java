@@ -9,19 +9,35 @@ import androidx.core.view.GravityCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.IOException;
 
 import static com.example.panel.R.*;
 import static com.example.panel.R.string.*;
 
 public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final int SELECT_IMAGE
     private DrawerLayout drawer;
+    private int requestCode;
+    private int resultCode;
+    private Intent data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +62,58 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         toggle.syncState();
     }
 
+// TO OPEN GALLERY
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        this.requestCode = requestCode;
+        this.resultCode = resultCode;
+        this.data = data;
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch(requestCode) {
+            case 1234:
+                if(resultCode == RESULT_OK){
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    assert selectedImage != null;
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String filePath = cursor.getString(columnIndex);
+                    cursor.close();
+
+
+                    Bitmap yourSelectedImage = BitmapFactory.decodeFile(filePath);
+                    /* Now you have choosen image in Bitmap format in object "yourSelectedImage". You can use it in way you want! */
+                }
+        }
+
+    }
+
+//TO OPEN CAMERA
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SELECT_IMAGE) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private Context getActivity() {
+    }
+
+
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -61,6 +129,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
            case id.dashboard:
                getSupportFragmentManager().beginTransaction().replace(id.fragment_container,new dashboardfragment()).commit();
 
+
                break;
 
            case id.admin:
@@ -70,19 +139,38 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
 
 
            case id.b_images:
+
+
+               View.OnClickListener btnChoosePhotoPressed = new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       Intent i = new Intent(Intent.ACTION_PICK,
+                               android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                       final int ACTIVITY_SELECT_IMAGE = 1234;
+                       startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+                   }
+               };
+
+
+
                getSupportFragmentManager().beginTransaction().replace(id.fragment_container,new bimagefragment()).commit();
 
                break;
 
 
            case id.image:
-               getSupportFragmentManager().beginTransaction().replace(id.fragment_container,new cameraragment()).commit();
+
+               Intent intent = new Intent();
+               intent.setType("image/*");
+               intent.setAction(Intent.ACTION_GET_CONTENT);
+               startActivityForResult(Intent.createChooser(intent, "Select Picture"),SELECT_IMAGE);
+
 
                break;
 
 
-           case id.message:
-               getSupportFragmentManager().beginTransaction().replace(id.fragment_container,new messagefragment()).commit();
+           case id.messages:
+               getSupportFragmentManager().beginTransaction().replace(id.fragment_container,new messagesfragment()).commit();
 
                break;
 

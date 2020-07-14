@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     class Credentials
     {
-        String name = "Admin";
+        String name = "Prabhakar";
         String password = "123456";
     }
 

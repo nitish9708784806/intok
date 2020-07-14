@@ -56,6 +56,6 @@
         android:layout_marginLeft="80dp"
         android:textSize="20dp"
         android:layout_marginTop="440dp"
-        android:text="Number of attempts left: " />
+        android:text="Number of attempts left:" />
 
 </RelativeLayout>

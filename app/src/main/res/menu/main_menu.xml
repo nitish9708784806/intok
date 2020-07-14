@@ -17,7 +17,7 @@
         <item
             android:id="@+id/b_images"
             android:icon="@drawable/camera"
-            android:title="Banner Images" />
+            android:title="Camera" />
 
         <item
 
