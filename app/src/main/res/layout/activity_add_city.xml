@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".add_city">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add City"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#0c0c0c">
+
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="100dp"
+        android:drawablePadding="10dp"
+        android:background="@drawable/edit_round"
+        android:paddingLeft="10dp"
+        android:textColor="#F30808"
+        />
+
+    <EditText
+        android:id="@+id/txt2"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/edit_round"
+        android:drawablePadding="10dp"
+        android:paddingLeft="10dp"
+        android:hint="City"
+        android:textColorHint="#0C0C0C"
+        android:textColor="#0c0c0c"
+        android:inputType="textEmailAddress"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/round_btn"
+        android:text="Add"
+        android:textSize="20dp" />
+
+
+
+
+</RelativeLayout>

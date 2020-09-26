@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.panel">
 
-    package="com.example.panel" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -9,19 +12,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".add_notice"></activity>
+        <activity android:name=".add_hotel" />
+        <activity android:name=".add_country" />
+        <activity android:name=".add_city" />
+        <activity android:name=".add_admin" />
+        <activity android:name=".hotel" />
+        <activity android:name=".city" />
+        <activity android:name=".country" />
+        <activity android:name=".notice" />
+        <activity android:name=".enquiry" />
+        <activity android:name=".admin" />
+        <activity android:name=".subscryption" />
+        <activity android:name=".new_message" />
+        <activity android:name=".Total_message" />
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
+            android:name=".dashboardfragment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SecondActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

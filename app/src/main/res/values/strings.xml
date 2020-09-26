@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">Panel</string>
+    <string-array name="number">
+        <item>India</item>
+        <item>Australia</item>
+        <item>Pakistan</item>
+        <item>Srilanka</item>
+        <item>England</item>
+        <item>New Zeeland</item>
+        <item>Nepal</item>
+        <item>Bhutan</item>
+        <item>Bangladesh</item>
+        <item>Afganishtan</item>
+    </string-array>
+    <string-array name="number1">
+        <item>Bhopal</item>
+        <item>Sanchi</item>
+        <item>Gwalior</item>
+        <item>Vidisha</item>
+        <item>Bina</item>
+        <item>Indor</item>
+
+    </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -16,4 +37,7 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_nav">NavActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

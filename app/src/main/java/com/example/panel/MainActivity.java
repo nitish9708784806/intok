@@ -1,7 +1,5 @@
 package com.example.panel;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.panel.SecondActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     class Credentials
     {
-        String name = "Prabhakar";
-        String password = "123456";
+        String name = "wassupprabhakar@gmail.com";
+        String password = "123456p";
     }
 
     boolean isValid = false;

@@ -1,61 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     tools:showIn="navigation_view">
+
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/dashboard"
-            android:icon="@drawable/profile"
-            android:title="Dashboard" />
+            app:showAsAction="always"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Dashboard"
+            />
+
         <item
 
             android:id="@+id/admin"
+            app:showAsAction="always"
             android:icon="@drawable/ic_perm_identity_black_24dp"
             android:title="Admins" />
 
-        <item
-            android:id="@+id/b_images"
-            android:icon="@drawable/camera"
-            android:title="Camera" />
-
-        <item
-
-            android:id="@+id/g_images"
-            android:icon="@drawable/ic_image_black_24dp"
-            android:title="Gallery images" />
-
-        <item
-
-            android:id="@+id/resume"
-            android:icon="@drawable/ic_message_black_24dp"
-            android:title="Resume" />
 
         <item
 
             android:id="@+id/messages"
+            app:showAsAction="always"
             android:icon="@drawable/ic_message_black_24dp"
             android:title="Messages" />
 
         <item
 
             android:id="@+id/addmi"
-            android:icon="@drawable/ic_perm_identity_black_24dp"
-            android:title="Admission enquiries" />
+            app:showAsAction="always"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Enquiries" />
 
         <item
 
             android:id="@+id/notic"
+            app:showAsAction="always"
             android:icon="@drawable/ic_message_black_24dp"
             android:title="Notice" />
 
         <item
 
+            android:id="@+id/country"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_public_black_24dp"
+            android:title="Country" />
+
+        <item
+
+            android:id="@+id/city"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="City" />
+
+
+        <item
+
             android:id="@+id/sub"
-            android:icon="@drawable/subscriptions"
-            android:title="Subscription" />
-
-
+            app:showAsAction="always"
+            android:icon="@drawable/hotel"
+            android:title="Hotel" />
     </group>
 
 </menu>

@@ -1,5 +1,6 @@
 package com.example.panel;
 
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ public class adminfragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_admin,container,false);
+        return inflater.inflate(R.layout.activity_admin,container,false);
+
     }
+
 }

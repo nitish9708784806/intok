@@ -2,7 +2,14 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorBlue">#29B6F6</color>
-    <color name="white">#ffffff</color>
+    <color name="colorAccent">#FDFCFC</color>
+    <color name="colorBlue">#04090C</color>
+    <color name="white">#FCFCFC</color>
+    <color name="colorTransparent">#00ffffff</color>
+
+    <color name="colorGradientStart">#D9FF43</color>
+    <color name="colorGradientCenter">#F67831</color>
+    <color name="colorGradientEnd">#FF1493</color>
+    <color name="my_spinner_text_color">#ff6601</color>
+    <color name="toolbar">#ff6601</color>
 </resources>
